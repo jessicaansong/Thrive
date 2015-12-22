@@ -1,0 +1,143 @@
+﻿
+@model Charm.Models.BlogPost
+           @using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Details";
+    }
+
+<h2>@Html.DisplayFor(model => Model.Title)</h2>
+
+<!-- Page Content -->
+
+<div class="container">
+    
+    <div class="row">
+        
+        <!-- ========= Blog Post Content Column ========= -->
+
+        <div class="col-md-8">
+
+                            <!--=======  Title ===============-->
+        <div class="movetop"></div>
+
+                                <h2>@Html.DisplayFor(model => Model.Title)</h2>
+                            <!--====== Author & Date ============-->
+            <div style = "line-height:1.0em;">
+                By Jessica Ansong on @Html.DisplayFor(modelItem => Model.Created)
+            </div>
+                            <hr>
+
+                            <!--======== Image ================-->
+                                
+                                @if (Model.MediaUrl != null)
+                                {
+                                    <div>
+                                        <img class="img-responsive" height="500" width="500" src="@Model.MediaUrl" alt="" />
+                                    </div>
+                                }
+
+                                   <hr />
+
+
+                            <!--======== Blog ================-->
+
+                                            <p>
+
+                                                    @Html.Raw(Model.Blog)
+                                            
+                                            </p>
+
+                              
+                                   
+                                
+            <hr>
+
+            <!--========= Comments ================= -->
+
+                        <!--========== Comments Form========= -->
+
+                @if (User.Identity.IsAuthenticated)
+                { 
+                            <div class="well">
+                                
+                                <h4>Leave a Comment:</h4>
+                            
+                                <form class="form-horizontal" method="post" action="@Url.Action("CreateComment")"> <!--Begin Form-->
+                                    
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" name = "Body" placeholder="Sign in to leave a comment"></textarea>
+                                    </div>
+
+                                     @Html.AntiForgeryToken()
+                            
+                                    <input type="hidden" name="PostId" value="@Model.Id" />
+
+                                    <button type="submit" class="btn btn-theme2">Submit</button>
+
+                                    </form> <!--/ End Form -->
+
+                    
+
+                                    
+                                   
+
+                                   
+                            
+                                
+                         
+                          </div><!--/ div well -->
+                } 
+                else
+                { 
+                    <small style="font:italic">
+                        Please login to leave a comment. @Html.Partial("~/Views/Shared/_LoginPartial.cshtml")
+                    </small>
+                }
+                
+                    <hr>
+
+                    <!--========== Posted Comments=========== -->
+
+                    <!--========= Comment ================ -->
+
+                    @foreach (var item in Model.Comments.OrderByDescending(c => c.Created))
+                    {
+                        <div class="media">
+
+                            <div class="media-body">
+                            
+                                <h4 class="media-heading">
+
+                                    @Html.DisplayFor(modelItem => item.Author.UserName)
+
+                                </h4>
+                                  
+                                          <small>@Html.DisplayFor(modelItem => item.Created)</small>
+                                
+                               
+                                <p>
+                                       @Html.DisplayFor(modelItem => item.Body)                            
+                                </p>
+                            
+                                <ul class="text-muted list-inline">
+                                   
+
+                                    <li><i class="fa fa-cog"></i> @Html.ActionLink("Edit", "EditComment", new { id = item.Id });
+
+                                    <li><i class="fa fa-cog"></i> @Html.ActionLink("Delete", "DeleteComment", new { id = item.Id });
+                                </ul>
+                            </div>
+                        
+                        </div>
+
+
+
+                    }
+                    
+                    </div> <!--col-lg-8 ends-->
+
+                </div><!--/row ends-->
+
+            </div><!--/container ends-->
+

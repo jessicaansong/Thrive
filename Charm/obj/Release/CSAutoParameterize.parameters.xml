@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:mbmuw7kmu9.database.windows.net,1433;Database=jansong-db;User ID=CoderFoundry@mbmuw7kmu9;Password=LearnToCode1;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jessica\\Documents\\z_Others\\Others\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="CharmContext-Web.config Connection String" description="CharmContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0; Initial Catalog=CharmContext-20150929131610; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|CharmContext-20150929131610.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jessica\\Documents\\z_Others\\Others\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CharmContext']/@connectionString" />
+  </parameter>
+  <parameter name="Charm.Models.BlogPostDBContext-Web.config Connection String" description="Charm.Models.BlogPostDBContext Connection String used in web.config by the application to access the database." defaultValue="Charm.Models.BlogPostDBContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jessica\\Documents\\z_Others\\Others\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Charm.Models.BlogPostDBContext']/@connectionString" />
+  </parameter>
+</parameters>

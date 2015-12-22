@@ -1,0 +1,511 @@
+﻿
+@{
+    ViewBag.Title = "JavaScriptExercises";
+}
+
+<div class="move"></div>
+
+<div id="portfolio-header" class="text-center">
+    <h1 class="section-title"><span>JavaScript </span>Exercises<i class="fa fa-code"></i></h1>
+    <div class="container">
+        <div class="row"> 
+
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#max">Max of Five</a></h2>
+                </div><!--/ Max of Five-->
+
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#sum">Sum of Five</a></h2>
+              </div><!--/ Sum-->
+
+            <div class="col-md-4">
+                <h2><a href="" data-toggle="modal" data-target="#multiply">Multiply Five</a></h2>
+            </div><!--/ Multiply Five -->
+
+            <div class="row"><!--Second Row-->
+
+                <div class="col-md-4">
+               <h2><a href="" data-toggle="modal" data-target="#factorial">Factorial</a></h2>
+                </div><!-- / Factorial -->
+
+            
+                <div class="col-md-4">
+                        <h2><a href="" data-toggle="modal" data-target="#fizz">FizzBuzz</a></h2>
+                    </div><!-- / FizzBuzz -->
+
+                <div class="col-md-4">
+                    <h2><a href="" data-toggle="modal" data-target="#mean">Mean</a></h2>
+                </div><!-- / Mean -->
+
+                <div class="col-md-4">
+                    <h2><a href="" data-toggle="modal" data-target="#min">Min of Five</a></h2>
+                </div><!-- / Min of Five -->
+
+
+                </div> <!--/ Second Row-->
+            </div> <!--/ First Row -->
+        </div> <!-- / Container -->
+    </div> <!-- / Portfolio id-->
+
+
+
+
+
+<!--===================================Max of Five Modal=========================================-->
+<div class="modal fade" id="max" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that enables the computer to return the largest of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the largest number will be displayed.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="n1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="n2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="n3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="n4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="n5" />
+                            </div>
+                            <button class="btn-theme2" onclick="maxOfFive()">Enter</button>
+                            <p id="maxResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+                            function maxOfFive(){ //Define the function
+                            var n1 = document.getElementById('n1').value; //Created 5 variables
+                            var n2 = document.getElementById('n2').value;
+                            var n3 = document.getElementById('n3').value;
+                            var n4 = document.getElementById('n4').value;
+                            var n5 = document.getElementById('n5').value;
+                            var result = Math.max(n1, n2, n3, n4, n5); //Take the largest of these variables
+                            var display = document.getElementById('maxResult'); //Show the largest number
+                            display.innerHTML = "The largest number is " + result ;
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===================================Max of Five Modal Ends=========================================-->
+
+
+
+
+
+<!--===================================Sum Modal=========================================-->
+<div class="modal fade" id="sum" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Sum of Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that enables the computer to return the sum of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the sum will be displayed.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                        </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="num5" />
+                            </div>
+                            <button class="btn-theme2" onclick="sumOfFive()">Enter</button>
+                            <p id="sumResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function sumOfFive() {
+var num1 = document.getElementById('num1').value;
+var num2 = document.getElementById('num2').value;
+var num3 = document.getElementById('num3').value;
+var num4 = document.getElementById('num4').value;
+var num5 = document.getElementById('num5').value;
+    
+var sumResult = Number(num1) + Number(num2) + Number(num3) + Number(num4) + Number(num5);
+  
+var onScreen = document.getElementById('sumResult');
+onScreen.innerHTML = "The sum is " + sumResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===================================Sum Modal Ends=========================================-->
+
+
+
+
+
+<!--=================================Multiply Modal=========================================-->
+<div class="modal fade" id="multiply" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Multiply Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that enables the computer to return the product of five numbers. Enter five numbers in each of the five text boxes below. Press "Enter" and the product will be displayed.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="m5" />
+                            </div>
+                            <button class="btn-theme2" onclick="multiplyFive()">Enter</button>
+                            <p id="mResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function multiplyFive() {
+var m1 = document.getElementById('m1').value;
+var m2 = document.getElementById('m2').value;
+var m3 = document.getElementById('m3').value;
+var m4 = document.getElementById('m4').value;
+var m5 = document.getElementById('m5').value;
+var mResult = Number(m1) * Number(m2) * Number(m3) * Number(m4) * Number(m5);
+var onDisplay = document.getElementById('mResult');
+onDisplay.innerHTML = "The product is " + mResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Multiply Modal Ends=========================================-->
+
+
+
+
+
+<!--=================================Factorial Modal=========================================-->
+<div class="modal fade" id="factorial" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Factorial</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                         Factorial refers to the product of an integer and all the integers below it. For instance, the factorial of 3 is 6, since 3 x 2 x 1 equals 6. Enter a positive number in the textbox below in order to obtain its factorial.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="f" />
+                            </div>
+                            
+                            <button class="btn-theme2" onclick="getNumber()">Enter</button>
+                            <p id="factResult"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function getNumber() {
+var f = document.getElementById('f').value; //The user's input
+var factResult = factorial(f); //Trigger the factorial function, passing the user's input as a parameter
+var toDisplay = document.getElementById('factResult');
+toDisplay.innerHTML = "The factorial is " + factResult;
+}
+function factorial(f) { //Pass the user's number in the function 
+var factResult = 1;
+for (var i = 1; i <= f; i++)
+factResult *= i;
+return factResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Factorial Modal Ends=========================================-->
+
+
+
+
+    <!--=================================FizzBuzz Modal=========================================-->
+    <div class="modal fade" id="fizz" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h1 class="modal-title" id="myModalLabel">FizzBuzz</h1>
+                </div>
+                <div class="modal-body col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!--Left Column-->
+                            <h3><strong>Description: </strong></h3>
+                            <p>
+                                This function is under construction. Please check back soon!
+                            </p>
+                            <br />
+                            <div class="row">
+                                <div class="col-3-md">
+                                </div>
+                                <div class="col-3-md">
+                                    <input type="text" id="fb1" />
+                                </div>
+                                <div class="col-3-md">
+                                    <input type="text" id="fb2" />
+                                </div>
+                                <button class="btn-theme2" onclick="fizzBuzz()">Enter</button>
+                                <p id="statement"></p>
+                              
+                            </div>
+                        </div>
+                        <!--Right Column-->
+                        <div class="col-sm-6">
+                            <pre class="brush: js text">
+Coming soon!
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer no-margin">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===============================FizzBuzz Modal Ends=========================================-->
+
+
+
+
+
+
+  <!--=================================Min of Five Modal=========================================-->
+<div class="modal fade" id="min" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Min of Five</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                            I designed a program that allows a user to return the least of five numbers. Enter values in the text boxes below, and the least of the five numbers will appear.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="min5" />
+                            </div>
+                            <button class="btn-theme2" onclick="min()">Enter</button>
+                            <p id="minResult"></p>
+
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function min() {
+var min1 = document.getElementById('min1').value;
+var min2 = document.getElementById('min2').value;
+var min3 = document.getElementById('min3').value;
+var min4 = document.getElementById('min4').value
+var min5 = document.getElementById('min5').value;
+var minResult = Math.min(min1, min2, min3, min4, min5);
+var showNow = document.getElementById('minResult')
+showNow.innerHTML = "The mean is " + minResult;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Min of Five Modal Ends=========================================-->
+
+<!--=================================Mean Modal=========================================-->
+<div class="modal fade" id="mean" tabindex="50" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h1 class="modal-title" id="myModalLabel">Mean</h1>
+            </div>
+            <div class="modal-body col-sm-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!--Left Column-->
+                        <h3><strong>Description: </strong></h3>
+                        <p>
+                           I have developed a program that returns the average of five numbers. Please insert 5 values in the text boxes below.
+                        </p>
+                        <br />
+                        <div class="row">
+                            <div class="col-3-md">
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e1" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e2" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e3" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e4" />
+                            </div>
+                            <div class="col-3-md">
+                                <input type="text" id="e5" />
+                            </div>
+                            <button class="btn-theme2" onclick="mean()">Enter</button>
+                            <p id="eResult2"></p>
+                        </div>
+                    </div>
+                    <!--Right Column-->
+                    <div class="col-sm-6">
+                        <pre class="brush: js text">
+function mean() {
+var e1 = document.getElementById('e1').value;
+var e2 = document.getElementById('e2').value;
+var e3 = document.getElementById('e3').value;
+var e4 = document.getElementById('e4').value;
+var e5 = document.getElementById('e5').value;
+var eResult = Number(e1) + Number(e2) + Number(e3) + Number(e4) + Number(e5);
+var eResult2 = eResult / 5;
+var forShow = document.getElementById('eResult2');
+forShow.innerHTML = "The mean is " + eResult2;
+}
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-margin">
+            </div>
+        </div>
+    </div>
+</div>
+<!--===============================Mean Modal Ends=========================================-->
+
+
+
+
+@section scripts{
+<script src="/Scripts/SyntaxHighlighter/shCore.js"></script>
+<script src="/Scripts/SyntaxHighlighter/shBrushJScript.js"></script>
+<script src="/JavaScriptExamples/max.js"></script>
+<script src="/JavaScriptExamples/sum.js"></script>
+<script src="/JavaScriptExamples/multiply.js"></script>
+<script src="/JavaScriptExamples/factorial.js"></script>
+<script src="/JavaScriptExamples/fizz.js"></script>
+<script src="/JavaScriptExamples/mean.js"></script>
+<script src="/JavaScriptExamples/min.js"></script>
+<script>
+    SyntaxHighlighter.all();
+    </script>
+
+
+}

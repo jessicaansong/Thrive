@@ -1,0 +1,105 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+
+@model PagedList<Charm.Models.BlogPost>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ <!--======== Page Content ========-->
+
+<div class="container">
+    <div class="row">
+
+        <!-- ========Blog Entries Column======== -->
+
+        <div class="col-md-8">
+            <h1 class="page-header">
+                Blog
+            </h1>
+
+            <div class="move"></div>
+            @foreach (var item in Model)
+            {  
+                <h2>
+                     @Html.DisplayFor(ModelItem=> item.Title)
+                </h2><!--/title ends-->
+                
+               
+                        <p class="byline">
+                            By Jessica Ansong on @Html.DisplayFor(modelItem => item.Created)
+                       </p> <!--/blog byline-->
+
+                <div class="btwnbyline">
+                </div>
+
+
+
+
+                            <img class="img-responsive" src="@item.MediaUrl" height="500" width =" 500" alt="" />
+
+
+                            <div class="abc">
+                                <p>  @Html.Raw(item.Blog)</p>
+                            </div>
+
+                            <button type="button" class="btn-theme2" onclick="location.href='@Url.Action("Details", new { item.Slug})'">Read More</button>
+
+                <div class="move"></div>
+                <hr />
+                <div class="move"></div>
+            }
+
+
+
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div><!--/blog column ends here-->
+
+        <div class="col-md-4">   
+            <h1 class="page-header">
+                Blog
+            </h1>
+            <div class="move"></div>
+            <h2 class="page-header">
+                Looking For Something?
+            </h2>
+            <div class="move"></div>
+            <form method="post" action="@Url.Action("Index", "Blog")">
+                <input type="search" class="form-control" name="Query" size="3"  maxlength = "6" placeholder="Search" /> 
+                <button type="submit" class="btn-group-sm">Go</button>
+                
+
+            </form>
+       </div>
+    <hr>
+      
+    </div><!--/div row ends here-->
+</div><!--/container ends here-->
+<!-- /.container -->
+
+@section scripts{
+<script src="/JQueryDotDotDot/Ellipsis.js"></script>
+<script src="/JQueryDotDotDot/jquery.dotdotdot.js"></script>
+
+<script>
+    $(window).load(function () {
+    //$(document).ready(function(){
+        $('.backstretch').remove();
+        //console.log("In document ready");
+        $(".abc").dotdotdot({
+            ellipsis: '. . . ',
+            wrap: 'word',
+            watch: true,
+            height: 100,
+            maxHeight: 100
+        });
+    });
+</script>
+}
+
+<div class="col-sm-8">
+
+</div>
+

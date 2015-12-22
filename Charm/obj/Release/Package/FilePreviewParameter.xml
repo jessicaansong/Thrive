@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="jansong" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Jessica\\Documents\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Jessica\\Documents\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Charm.Models.BlogPostDBContext-Web.config Connection String" description="" value="Charm.Models.BlogPostDBContext_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jessica\\Documents\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Charm.Models.BlogPostDBContext']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Server=tcp:mbmuw7kmu9.database.windows.net,1433;Database=jansong-db;User ID=CoderFoundry@mbmuw7kmu9;Password=LearnToCode1;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jessica\\Documents\\GitHub\\Charm\\CharmBracelet\\CharmBracelet\\Charm\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

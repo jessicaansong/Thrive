@@ -1,0 +1,53 @@
+﻿
+@model Charm.Models.Comment
+
+@{
+    ViewBag.Title = "DeleteComment";
+}
+<!--Inserting space between navbar and container-->
+
+ <div class ="movetop"></div>
+
+<style>
+    textarea{
+        width: 500px;
+        height: 100px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Are you sure you want to delete this comment?</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                
+                @Html.ValidationSummary(true, "", new {  @class = "text-danger"})
+                @Html.HiddenFor(model => model.Id)
+                @Html.HiddenFor(model => model.PostId)
+                
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Body, new { htmlAtrributes = new { @class = "form-control" }})
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger"})
+
+                        @*@Html.TextArea("EventNature",new { maxlength=50, // or other value
+                                  style = "width: 500px; height: 400px;" })*@
+                    </div>
+                </div>
+                
+                <hr />
+                
+               <div class="space_btwnelements"></div>
+                
+                <div>
+                    <div class="col-md-10">
+                        <input type="submit" value="Yes, please delete this comment" class="btn-theme2" />
+                    </div>
+                </div>
+                
+            }
+            
+        </div>
+    </div>
+</div>
